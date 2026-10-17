@@ -11,17 +11,16 @@
 </head>
 <body>
 
-  <!-- #region Banner de Alerta Superior -->
+  <!-- Banner de Alerta Superior -->
   <div class="top-announcement">
     <div class="announcement-content"><span>BEM-VINDO AO SP_ROLEPLAY: Confira as Regras Oficiais e nossa Hierarquia!</span></div>
-    <button class="close-announcement">&times;</button>
+    <button class="close-announcement" aria-label="Fechar Aviso">&times;</button>
   </div>
-  <!-- #endregion -->
 
   <!-- Overlay para fechar menu no mobile -->
   <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
 
-  <!-- #region Header Principal e Navegação -->
+  <!-- Header Principal e Navegação -->
   <header class="main-header">
     <div class="container nav-flex">
       
@@ -36,7 +35,7 @@
       </div>
 
       <div class="header-actions">
-        <a href="https://www.roblox.com" target="_blank" rel="noopener noreferrer" class="btn-auth-solid">
+        <a href="https://www.roblox.com" target="_blank" rel="noopener noreferrer" class="btn-auth-solid desktop-auth-btn">
           <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>
           Entrar com a Conta Roblox
         </a>
@@ -63,14 +62,21 @@
           <li><button class="tab-btn" onclick="switchTab(event, 'servidor')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>Servidor (Em breve)</button></li>
         </ul>
       </div>
+
+      <!-- Botão Roblox no Fundo da Sidebar (Apenas Mobile) -->
+      <div class="sidebar-auth-wrapper">
+        <a href="https://www.roblox.com" target="_blank" rel="noopener noreferrer" class="btn-auth-solid mobile-auth-btn">
+          <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>
+          Entrar com a Conta Roblox
+        </a>
+      </div>
     </nav>
   </header>
-  <!-- #endregion -->
 
-  <!-- #region Conteúdo Principal -->
+  <!-- Conteúdo Principal -->
   <main>
 
-    <!-- #region Aba: Início -->
+    <!-- Aba: Início -->
     <section id="home" class="tab-content active">
       <div class="hero-section">
         <div class="container hero-flex">
@@ -126,9 +132,8 @@
       </div>
       <div class="footer-gradient-divider"></div>
     </section>
-    <!-- #endregion -->
 
-    <!-- #region Aba: Hierarquia -->
+    <!-- Aba: Hierarquia -->
     <section id="hierarquia" class="tab-content">
       <div class="container page-padding">
         <div class="hierarchy-page-header">
@@ -138,8 +143,10 @@
 
         <div class="hierarchy-search-box">
           <div class="search-input-wrapper">
-            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" id="hierarchySearchInput" placeholder="Buscar por cargo, tag ou integrante..." oninput="filterHierarchy()">
+            <div class="input-relative">
+              <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" id="hierarchySearchInput" placeholder="Buscar por cargo, tag ou integrante" oninput="filterHierarchy()">
+            </div>
             <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
             <select id="hierarchySectorSelect" onchange="filterSectorSelect(this.value)">
               <option value="all">Todos os Setores (8)</option>
@@ -161,7 +168,7 @@
           <p>Tente pesquisar por outros termos, tags de nível ou selecione outro setor no filtro.</p>
         </div>
 
-        <!-- Setor: Administração -->
+        <!-- Setores da Hierarquia -->
         <div class="hierarchy-card-group" data-sector="administracao">
           <div class="group-header"><img src="image/emblemaADM.png" alt="Emblema Administração" class="group-icon-svg" style="object-fit: contain;"><div><h3>ADMINISTRAÇÃO</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Direção técnica, infraestrutura, desenvolvimento e moderação geral da comunidade e dos sistemas do servidor.</p></div>
@@ -174,7 +181,6 @@
           </div>
         </div>
 
-        <!-- Setor: Governo Federal -->
         <div class="hierarchy-card-group" data-sector="governo-federal">
           <div class="group-header"><img src="image/emblemaGOVERNO.png" alt="Emblema Governo Federal" class="group-icon-svg" style="object-fit: contain;"><div><h3>GOVERNO FEDERAL</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Cúpula executiva do governo, planejamento político, regulamentação pública e representação máxima do estado.</p></div>
@@ -186,7 +192,6 @@
           </div>
         </div>
 
-        <!-- Setor: Corregedoria -->
         <div class="hierarchy-card-group" data-sector="corregedoria">
           <div class="group-header"><img src="image/emblemaCORREGEDORIA.png" alt="Emblema Corregedoria" class="group-icon-svg" style="object-fit: contain;"><div><h3>CORREGEDORIA + CHEFIA DA POLÍCIA</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Gestão de Segurança Pública, direção máxima dos órgãos policiais, auditoria e fiscalização disciplinar do efetivo.</p></div>
@@ -201,7 +206,6 @@
           </div>
         </div>
 
-        <!-- Setor: Oficiais Superiores -->
         <div class="hierarchy-card-group" data-sector="oficiais-superiores">
           <div class="group-header"><img src="image/emblemaOFICIAIS.png" alt="Emblema Oficiais Superiores" class="group-icon-svg" style="object-fit: contain;"><div><h3>OFICIAIS SUPERIORES</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Gestão tática e estratégica de batalhões, coordenação de grandes operações e planejamento de missões e patrulhamentos ostensivos.</p></div>
@@ -213,7 +217,6 @@
           </div>
         </div>
 
-        <!-- Setor: Oficiais Subalternos -->
         <div class="hierarchy-card-group" data-sector="oficiais-subalternos">
           <div class="group-header"><img src="image/emblemaSUBALTERNOS.png" alt="Emblema Oficiais Subalternos" class="group-icon-svg" style="object-fit: contain;"><div><h3>OFICIAIS SUBALTERNOS</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Liderança direta de equipes de patrulhamento em campo, coordenação de ocorrências de grande porte e acompanhamento da instrução de praças.</p></div>
@@ -224,7 +227,6 @@
           </div>
         </div>
 
-        <!-- Setor: Graduados -->
         <div class="hierarchy-card-group" data-sector="graduados">
           <div class="group-header"><img src="image/emblemaGRADUADO.png" alt="Emblema Graduados" class="group-icon-svg" style="object-fit: contain;"><div><h3>GRADUADOS</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Espinha dorsal da tropa, encarregados do comando de viaturas, orientação tática de soldados e fiscalização do policiamento nas ruas.</p></div>
@@ -237,7 +239,6 @@
           </div>
         </div>
 
-        <!-- Setor: Praças -->
         <div class="hierarchy-card-group" data-sector="pracas">
           <div class="group-header"><img src="image/emblemaPRACA.png" alt="Emblema Praças" class="group-icon-svg" style="object-fit: contain;"><div><h3>PRAÇAS</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Executores do policiamento ostensivo e preventivo nas ruas, aprendizes da doutrina policial militar e primeiros a responder aos chamados.</p></div>
@@ -249,7 +250,6 @@
           </div>
         </div>
 
-        <!-- Setor: Membros -->
         <div class="hierarchy-card-group" data-sector="membros">
           <div class="group-header"><svg class="group-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><div><h3>MEMBROS</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Integrantes da comunidade SP Roleplay, cidadãos civis, participantes de patrulhas, eventos e atividades comunitárias.</p></div>
@@ -260,9 +260,8 @@
       </div>
       <div class="footer-gradient-divider"></div>
     </section>
-    <!-- #endregion -->
 
-    <!-- #region Aba: Batalhões -->
+    <!-- Aba: Batalhões -->
     <section id="batalhoes" class="tab-content">
       <div class="container page-padding">
         <div class="hierarchy-page-header">
@@ -270,7 +269,6 @@
           <p class="subtitle-page">Quadro oficial de batalhões, comandos e cargos especializados (ROTA, COE e PM).</p>
         </div>
 
-        <!-- Batalhão: ROTA -->
         <div class="hierarchy-card-group">
           <div class="group-header"><img src="image/emblemaROTA.png" alt="Emblema ROTA" class="group-icon-svg" style="object-fit: contain;"><div><h3>BATALHÃO ROTA</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Unidade tática de elite focada no patrulhamento ostensivo de alto risco, combate ao crime organizado e apoio emergencial.</p></div>
@@ -283,7 +281,6 @@
           </div>
         </div>
 
-        <!-- Batalhão: COE -->
         <div class="hierarchy-card-group">
           <div class="group-header"><img src="image/emblemaCOE.png" alt="Emblema COE" class="group-icon-svg" style="object-fit: contain;"><div><h3>BATALHÃO COE</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Unidade especial capacitada para resgate de reféns, incursões em mata fechada, desarmamento de explosivos e gerenciamento de crises.</p></div>
@@ -296,7 +293,6 @@
           </div>
         </div>
 
-        <!-- Batalhão: PM -->
         <div class="hierarchy-card-group">
           <div class="group-header"><img src="image/emblemaPM.png" alt="Emblema PM" class="group-icon-svg" style="object-fit: contain;"><div><h3>BATALHÃO PM</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Efetivo principal da corporação, responsável pelas patrulhas de rotina, preservação da ordem e atendimento às ocorrências urbanas.</p></div>
@@ -311,9 +307,8 @@
       </div>
       <div class="footer-gradient-divider"></div>
     </section>
-    <!-- #endregion -->
 
-    <!-- #region Aba: Regras do Servidor -->
+    <!-- Aba: Regras do Servidor -->
     <section id="regras" class="tab-content">
       <div class="container page-padding">
         <div class="hierarchy-page-header">
@@ -350,20 +345,17 @@
       </div>
       <div class="footer-gradient-divider"></div>
     </section>
-    <!-- #endregion -->
 
-    <!-- #region Abas Secundárias (Em breve) -->
+    <!-- Abas Secundárias (Em breve) -->
     <section id="editais" class="tab-content"><div class="container page-padding"><h2 class="title-page">Editais e Processos Seletivos</h2><p class="subtitle-page">Acompanhe as turmas de recrutamento abertas para a corporação.</p></div><div class="footer-gradient-divider"></div></section>
     <section id="inscricoes" class="tab-content"><div class="container page-padding"><h2 class="title-page">Ficha de Inscrição</h2><p class="subtitle-page">Preencha seus dados para participar do processo seletivo.</p></div><div class="footer-gradient-divider"></div></section>
     <section id="noticias" class="tab-content"><div class="container page-padding"><h2 class="title-page">Boletins e Informativos</h2><p class="subtitle-page">Últimas notícias emitidas pelo Comando Geral.</p></div><div class="footer-gradient-divider"></div></section>
     <section id="servidor" class="tab-content"><div class="container page-padding"><h2 class="title-page">Guia do Servidor no Roblox</h2><p class="subtitle-page">Informações de comandos, viaturas e rádio.</p></div><div class="footer-gradient-divider"></div></section>
     <section id="admin" class="tab-content"><div class="container page-padding"><h2 class="title-page">Painel Administrativo</h2><p class="subtitle-page">Acesso restrito para oficiais e moderadores.</p></div><div class="footer-gradient-divider"></div></section>
-    <!-- #endregion -->
 
   </main>
-  <!-- #endregion -->
 
-  <!-- #region Rodapé -->
+  <!-- Rodapé -->
   <footer class="footer-dark">
     <div class="container">
       <div class="footer-columns">
@@ -398,7 +390,6 @@
       </div>
     </div>
   </footer>
-  <!-- #endregion -->
 
   <script src="script.js"></script>
 </body>

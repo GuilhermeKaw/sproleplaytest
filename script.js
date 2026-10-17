@@ -1,8 +1,8 @@
-//#region Troca de Abas & Controle do Menu Mobile
+// Troca de Abas & Controle do Menu Mobile
 function switchTab(event, tabId) {
   if (event) event.preventDefault();
 
-  // Fecha o menu sidebar mobile se estiver aberto
+  // Fecha a barra lateral se estiver aberta no celular
   closeMobileMenu();
 
   // 1. Oculta todas as abas
@@ -61,9 +61,8 @@ function closeMobileMenu() {
     overlay.classList.remove('active');
   }
 }
-//#endregion
 
-//#region Filtro e Pesquisa de Hierarquia
+// Filtro e Pesquisa de Hierarquia
 let activeSector = 'all';
 
 function filterHierarchy() {
@@ -108,9 +107,8 @@ function filterSectorSelect(val) {
   activeSector = val;
   filterHierarchy();
 }
-//#endregion
 
-//#region Eventos de Inicialização
+// Eventos de Inicialização
 document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.querySelector('.close-announcement');
   if (closeBtn) {
@@ -120,4 +118,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-//#endregion
