@@ -18,13 +18,23 @@
   </div>
   <!-- #endregion -->
 
+  <!-- Overlay para fechar menu no mobile -->
+  <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
+
   <!-- #region Header Principal e Navegação -->
   <header class="main-header">
     <div class="container nav-flex">
+      
+      <!-- Botão Hambúrguer (Apenas Mobile) -->
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir Menu">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
       <div class="brand" onclick="switchTab(event, 'home')" style="cursor: pointer;" title="Voltar ao Início">
         <div class="shield-logo"><img src="image/brasaoPM.png" alt="Brasão PM" width="42" height="50" style="object-fit: contain;"></div>
         <div class="brand-titles"><h1 class="brand-name">SP<span class="highlight-brand">ROLEPLAY</span></h1></div>
       </div>
+
       <div class="header-actions">
         <a href="https://www.roblox.com" target="_blank" rel="noopener noreferrer" class="btn-auth-solid">
           <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>
@@ -33,7 +43,14 @@
       </div>
     </div>
 
-    <nav class="nav-tabs-bar">
+    <!-- Barra / Sidebar de Navegação -->
+    <nav class="nav-tabs-bar" id="navTabsBar">
+      <!-- Cabeçalho da Sidebar (Apenas Mobile) -->
+      <div class="sidebar-header-mobile">
+        <span class="sidebar-title">NAVEGAÇÃO</span>
+        <button class="close-sidebar-btn" onclick="toggleMobileMenu()">&times;</button>
+      </div>
+
       <div class="container nav-tabs-center">
         <ul class="nav-tabs">
           <li><button class="tab-btn active" onclick="switchTab(event, 'home')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Início</button></li>

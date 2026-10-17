@@ -1,28 +1,65 @@
-//#region Troca de Abas
+//#region Troca de Abas & Controle do Menu Mobile
 function switchTab(event, tabId) {
   if (event) event.preventDefault();
 
-  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  // Fecha o menu sidebar mobile se estiver aberto
+  closeMobileMenu();
 
+  // 1. Oculta todas as abas
+  document.querySelectorAll('.tab-content').forEach(tab => {
+    tab.classList.remove('active');
+  });
+
+  // 2. Remove estado ativo dos botões
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  // 3. Ativa a aba selecionada
   const activeTab = document.getElementById(tabId);
-  if (activeTab) activeTab.classList.add('active');
+  if (activeTab) {
+    activeTab.classList.add('active');
+  }
 
-  if (event?.currentTarget?.classList.contains('tab-btn')) {
+  // 4. Ativa o botão correspondente
+  if (event && event.currentTarget && event.currentTarget.classList.contains('tab-btn')) {
     event.currentTarget.classList.add('active');
   } else {
     const btn = document.querySelector(`.tab-btn[onclick*="'${tabId}'"]`);
     if (btn) btn.classList.add('active');
   }
 
+  // Reseta a pesquisa e oculta a mensagem de erro ao trocar de aba
   const searchInput = document.getElementById('hierarchySearchInput');
   if (searchInput) searchInput.value = '';
 
   const noResultsMsg = document.getElementById('noResultsMessage');
   if (noResultsMsg) noResultsMsg.style.display = 'none';
 
-  document.querySelectorAll('#hierarquia .role-card, #hierarquia .hierarchy-card-group').forEach(el => el.style.display = '');
+  // Restaura a visibilidade dos elementos da hierarquia
+  document.querySelectorAll('#hierarquia .role-card, #hierarquia .hierarchy-card-group').forEach(el => {
+    el.style.display = '';
+  });
+
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function toggleMobileMenu() {
+  const navBar = document.getElementById('navTabsBar');
+  const overlay = document.getElementById('mobileOverlay');
+  if (navBar && overlay) {
+    navBar.classList.toggle('open');
+    overlay.classList.toggle('active');
+  }
+}
+
+function closeMobileMenu() {
+  const navBar = document.getElementById('navTabsBar');
+  const overlay = document.getElementById('mobileOverlay');
+  if (navBar && overlay) {
+    navBar.classList.remove('open');
+    overlay.classList.remove('active');
+  }
 }
 //#endregion
 

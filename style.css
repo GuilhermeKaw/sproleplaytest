@@ -40,6 +40,8 @@ a { text-decoration: none; color: inherit; }
 .header-actions { display: flex; align-items: center; gap: 10px; }
 .btn-auth-solid { background-color: var(--purple-solid); color: #ffffff; border: 1px solid var(--purple-solid); padding: 6px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; display: inline-flex; align-items: center; transition: all 0.25s ease; }
 .btn-auth-solid:hover { background-color: var(--purple-accent); border-color: var(--purple-accent); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4); }
+
+.mobile-menu-btn, .mobile-overlay, .sidebar-header-mobile { display: none; }
 /* #endregion */
 
 /* #region Tabs de Navegação */
@@ -175,16 +177,99 @@ a { text-decoration: none; color: inherit; }
 .github-link:hover { color: #ffffff; }
 /* #endregion */
 
-/* #region Responsividade Mobile */
+/* #region Responsividade Mobile apenas para telas pequenas (smartphones <= 768px) */
 @media (max-width: 768px) {
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid #334155;
+    color: #ffffff;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
   .container { padding: 0 16px; }
-  .close-announcement { right: 12px; }
-  .top-announcement { font-size: 0.78rem; padding: 8px 36px 8px 12px; }
+  .nav-flex { padding: 12px 0; gap: 12px; }
+  .brand-name { font-size: 1.3rem; }
+  .btn-auth-solid { padding: 6px 10px; font-size: 0.75rem; }
 
-  .nav-flex { flex-direction: column; gap: 12px; text-align: center; }
-  .brand { justify-content: center; }
-  .brand-name { font-size: 1.4rem; }
+  /* Overlay de fundo */
+  .mobile-overlay {
+    display: block;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(3px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .mobile-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
 
+  /* Sidebar Drawer na esquerda em celulares */
+  .nav-tabs-bar {
+    position: fixed;
+    top: 0; left: -280px;
+    width: 280px; height: 100vh;
+    background-color: #060a12;
+    z-index: 999;
+    border-right: 1px solid rgba(234, 179, 8, 0.3);
+    border-top: none;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .nav-tabs-bar.open { left: 0; }
+
+  /* Topo da Sidebar */
+  .sidebar-header-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(234, 179, 8, 0.3);
+    background-color: #0a0f1d;
+  }
+  .sidebar-title {
+    font-family: var(--font-brand);
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: var(--gold-accent);
+    letter-spacing: 1px;
+  }
+  .close-sidebar-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .close-sidebar-btn:hover { color: #ffffff; }
+
+  .nav-tabs-center { width: 100%; padding: 10px 0; }
+  .nav-tabs { flex-direction: column; width: 100%; gap: 0; }
+  .tab-btn {
+    width: 100%;
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    justify-content: flex-start;
+    font-size: 0.9rem;
+  }
+  .tab-btn.active::before {
+    width: 4px; height: 100%; left: 0; top: 0;
+  }
+
+  /* Layout geral para celulares */
   .hero-section { padding: 40px 0 80px 0; min-height: auto; text-align: center; }
   .hero-flex { flex-direction: column; gap: 28px; }
   .hero-title { font-size: 2.2rem; }
@@ -197,7 +282,6 @@ a { text-decoration: none; color: inherit; }
   .search-input-wrapper select { width: 100%; }
 
   .cards-grid, .group-cards-grid { grid-template-columns: 1fr; }
-  
   .news-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   .rule-card-header { flex-direction: column; align-items: flex-start; gap: 6px; }
 
