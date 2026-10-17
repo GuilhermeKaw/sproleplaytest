@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal RP São Paulo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- #region Banner de Alerta Superior -->
+  <div class="top-announcement">
+    <div class="announcement-content"><span>BEM-VINDO AO SP_ROLEPLAY: Confira as Regras Oficiais e nossa Hierarquia!</span></div>
+    <button class="close-announcement">&times;</button>
+  </div>
+  <!-- #endregion -->
+
+  <!-- #region Header Principal e Navegação -->
+  <header class="main-header">
+    <div class="container nav-flex">
+      <div class="brand" onclick="switchTab(event, 'home')" style="cursor: pointer;" title="Voltar ao Início">
+        <div class="shield-logo"><img src="image/brasaoPM.png" alt="Brasão PM" width="42" height="50" style="object-fit: contain;"></div>
+        <div class="brand-titles"><h1 class="brand-name">SP<span class="highlight-brand">ROLEPLAY</span></h1></div>
+      </div>
+      <div class="header-actions">
+        <a href="https://www.roblox.com" target="_blank" rel="noopener noreferrer" class="btn-auth-solid">
+          <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>
+          Entrar com a Conta Roblox
+        </a>
+      </div>
+    </div>
+
+    <nav class="nav-tabs-bar">
+      <div class="container nav-tabs-center">
+        <ul class="nav-tabs">
+          <li><button class="tab-btn active" onclick="switchTab(event, 'home')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Início</button></li>
+          <li><button class="tab-btn" onclick="switchTab(event, 'hierarquia')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Hierarquia</button></li>
+          <li><button class="tab-btn" onclick="switchTab(event, 'batalhoes')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Batalhões</button></li>
+          <li><button class="tab-btn" onclick="switchTab(event, 'regras')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l3-8 3 8a3 3 0 0 1-6 0zM2 16l3-8 3 8a3 3 0 0 1-6 0zM7 21h10M12 3v18M3 7h18"></path></svg>Regras do Servidor</button></li>
+          <li><button class="tab-btn" onclick="switchTab(event, 'editais')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>Editais (Em breve)</button></li>
+          <li><button class="tab-btn" onclick="switchTab(event, 'inscricoes')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>Inscrições (Em breve)</button></li>
+          <li><button class="tab-btn" onclick="switchTab(event, 'noticias')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>Notícias</button></li>
+          <li><button class="tab-btn" onclick="switchTab(event, 'servidor')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>Servidor (Em breve)</button></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <!-- #endregion -->
+
+  <!-- #region Conteúdo Principal -->
+  <main>
+
+    <!-- #region Aba: Início -->
+    <section id="home" class="tab-content active">
+      <div class="hero-section">
+        <div class="container hero-flex">
+          <div class="hero-badge-box"><div class="badge-card"><img src="image/brasaoPM.png" alt="Brasão PM" width="140" height="160" style="object-fit: contain;"></div></div>
+          <div class="hero-text-box">
+            <h1 class="hero-title">SP_ROLEPLAY</h1>
+            <div class="hero-description">
+              <p>Bem-vindo ao portal oficial da corporação!</p>
+              <p>Aqui você poderá acessar nosso servidor do Discord, conhecer nossa comunidade no Roblox, consultar os editais de ingresso no Departamento de Polícia Militar e conhecer a hierarquia de comando da nossa corporação.</p>
+              <p>Explore nossos canais oficiais e fique por dentro das oportunidades, informações e novidades da comunidade.</p>
+            </div>
+            <div class="hero-buttons">
+              <a href="https://www.roblox.com/pt/games/112115919419268/RP-S-o-Paulo" target="_blank" rel="noopener noreferrer" class="btn-hero-neutral">
+                <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>Entrar no Jogo Roblox<svg class="icon-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+              <a href="https://discord.gg/zs4uah6AjB" target="_blank" rel="noopener noreferrer" class="btn-hero-neutral">
+                <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Servidor Discord<svg class="icon-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="services-section">
+        <div class="container">
+          <div class="section-header text-center">
+            <h2>PRINCIPAIS SERVIÇOS DA CORPORAÇÃO</h2>
+            <p>Navegue pelos módulos oficiais do portal institucional</p>
+          </div>
+          <div class="cards-grid">
+            <div class="service-card" onclick="switchTab(event, 'hierarquia')">
+              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+              <h3>HIERARQUIA & EFETIVO</h3><p>Conheça a cadeia de comando, oficiais superiores, praças e unidades especializadas.</p><div class="card-divider"></div><span class="card-link">Ver Estrutura <span class="arrow">&rsaquo;</span></span>
+            </div>
+            <div class="service-card" onclick="switchTab(event, 'batalhoes')">
+              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+              <h3>BATALHÕES DE ELITE</h3><p>Estrutura interna, especializações e quadro de cargos da ROTA, COE e Policiamento.</p><div class="card-divider"></div><span class="card-link">Consultar Batalhões <span class="arrow">&rsaquo;</span></span>
+            </div>
+            <div class="service-card" onclick="switchTab(event, 'editais')">
+              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
+              <h3>EDITAIS & CONCURSOS</h3><p>Processos seletivos para ingresso no CFSd, cursos táticos do BAEP e formação de pilotos.</p><div class="card-divider"></div><span class="card-link">Consultar Editais <span class="arrow">&rsaquo;</span></span>
+            </div>
+            <div class="service-card" onclick="switchTab(event, 'regras')">
+              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l3-8 3 8a3 3 0 0 1-6 0zM2 16l3-8 3 8a3 3 0 0 1-6 0zM7 21h10M12 3v18M3 7h18"></path></svg></div>
+              <h3>REGRAS DO SERVIDOR</h3><p>Regulamento geral interno, código de conduta, diretrizes de convivência e punições disciplinares.</p><div class="card-divider"></div><span class="card-link">Ler Regras <span class="arrow">&rsaquo;</span></span>
+            </div>
+          </div>
+          <div class="news-header">
+            <div><h2>BOLETINS & COMUNICADOS OFICIAIS</h2><p>Informes emitidos pelo Comando Geral e diretorias da corporação</p></div>
+            <a href="#" onclick="switchTab(event, 'noticias')" class="see-all-link">Ver todas as notícias &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-gradient-divider"></div>
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region Aba: Hierarquia -->
+    <section id="hierarquia" class="tab-content">
+      <div class="container page-padding">
+        <div class="hierarchy-page-header">
+          <h2 class="title-page">CADEIA DE COMANDO & HIERARQUIA</h2>
+          <p class="subtitle-page">Quadro oficial de postos, graduações e especialidades da comunidade SP Roleplay.</p>
+        </div>
+
+        <div class="hierarchy-search-box">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="hierarchySearchInput" placeholder="Buscar por cargo, tag ou integrante..." oninput="filterHierarchy()">
+            <svg class="filter-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+            <select id="hierarchySectorSelect" onchange="filterSectorSelect(this.value)">
+              <option value="all">Todos os Setores (8)</option>
+              <option value="administracao">Administração</option>
+              <option value="governo-federal">Governo Federal</option>
+              <option value="corregedoria">Corregedoria + Chefia</option>
+              <option value="oficiais-superiores">Oficiais Superiores</option>
+              <option value="oficiais-subalternos">Oficiais Subalternos</option>
+              <option value="graduados">Graduados</option>
+              <option value="pracas">Praças</option>
+              <option value="membros">Membros</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="noResultsMessage" class="no-results-message">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+          <h4>NENHUM CARGO OU INTEGRANTE ENCONTRADO</h4>
+          <p>Tente pesquisar por outros termos, tags de nível ou selecione outro setor no filtro.</p>
+        </div>
+
+        <!-- Setor: Administração -->
+        <div class="hierarchy-card-group" data-sector="administracao">
+          <div class="group-header"><img src="image/emblemaADM.png" alt="Emblema Administração" class="group-icon-svg" style="object-fit: contain;"><div><h3>ADMINISTRAÇÃO</h3></div></div>
+          <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Direção técnica, infraestrutura, desenvolvimento e moderação geral da comunidade e dos sistemas do servidor.</p></div>
+          <div class="group-cards-grid">
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[ADM]</span><span class="role-level">Nível 1</span></div><h4 class="role-name">@Administrador</h4><p class="role-desc">Responsável pela gestão máxima da comunidade, decisões administrativas e supervisão geral.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[SUP]</span><span class="role-level">Nível 2</span></div><h4 class="role-name">@Supervisor</h4><p class="role-desc">Supervisão direta das equipes de moderação, atendimento aos membros e resolução de conflitos.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[DEV]</span><span class="role-level">Nível 3</span></div><h4 class="role-name">@Desenvolvedor</h4><p class="role-desc">Programação, criação de sistemas, scripts do jogo no Roblox e manutenção técnica do portal.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[MOD]</span><span class="role-level">Nível 4</span></div><h4 class="role-name">@Moderador</h4><p class="role-desc">Fiscalização do cumprimento das regras do servidor, suporte nos chats e acompanhamento dos chats de voz.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[EQP-ADM]</span><span class="role-level">Nível 5</span></div><h4 class="role-name">@Equipe de Administração</h4><p class="role-desc">Membros pertencentes à equipe administrativa de apoio ao servidor e comunidade.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+          </div>
+        </div>
+
+        <!-- Setor: Governo Federal -->
+        <div class="hierarchy-card-group" data-sector="governo-federal">
+          <div class="group-header"><img src="image/emblemaGOVERNO.png" alt="Emblema Governo Federal" class="group-icon-svg" style="object-fit: contain;"><div><h3>GOVERNO FEDERAL</h3></div></div>
+          <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Cúpula executiva do governo, planejamento político, regulamentação pública e representação máxima do estado.</p></div>
+          <div class="group-cards-grid">
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[PRES]</span><span class="role-level">Nível 6</span></div><h4 class="role-name">@Presidente</h4><p class="role-desc">Chefe do Poder Executivo, representante supremo da nação e comandante-em-chefe institucional.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[V PRES]</span><span class="role-level">Nível 7</span></div><h4 class="role-name">@Vice presidente</h4><p class="role-desc">Substituto imediato da Presidência e coordenador das diretrizes ministeriais e governamentais.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[SEC PRES]</span><span class="role-level">Nível 8</span></div><h4 class="role-name">@Secretária Presidencial</h4><p class="role-desc">Gestão da agenda executiva, emissão de decretos governamentais e suporte direto ao Gabinete da Presidência.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[GOV]</span><span class="role-level">Nível 9</span></div><h4 class="role-name">@Governo Federal</h4><p class="role-desc">Equipe e ministérios de apoio aos assuntos legislativos, executivos e diplomáticos do estado.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+          </div>
+        </div>
+
+        <!-- Setor: Corregedoria -->
+        <div class="hierarchy-card-group" data-sector="corregedoria">
+          <div class="group-header"><img src="image/emblemaCORREGEDORIA.png" alt="Emblema Corregedoria" class="group-icon-svg" style="object-fit: contain;"><div><h3>CORREGEDORIA + CHEFIA DA POLÍCIA</h3></div></div>
+          <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Gestão de Segurança Pública, direção máxima dos órgãos policiais, auditoria e fiscalização disciplinar do efetivo.</p></div>
+          <div class="group-cards-grid">
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[SSP]</span><span class="role-level">Nível 10</span></div><h4 class="role-name">@Secretário de Segurança Pública</h4><p class="role-desc">Autoridade máxima encarregada de coordenar a política e a gestão da segurança pública.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[DGP]</span><span class="role-level">Nível 11</span></div><h4 class="role-name">@Diretor Geral da Polícia</h4><p class="role-desc">Comando geral e direcionamento estratégico das operações e divisões policiais.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[CRG-GERAL]</span><span class="role-level">Nível 12</span></div><h4 class="role-name">@Corregedor-Geral</h4><p class="role-desc">Diretor supremo dos assuntos correcionais, sindicâncias internas e fiscalização de conduta.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[SUB-GERAL]</span><span class="role-level">Nível 13</span></div><h4 class="role-name">@Subcorregedor-Geral</h4><p class="role-desc">Vice-diretor correcional, responsável pela instrução e acompanhamento dos processos disciplinares.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[CRG-CHEFE]</span><span class="role-level">Nível 14</span></div><h4 class="role-name">@Corregedor-Chefe</h4><p class="role-desc">Chefe de equipe investigativa e supervisor direto das sindicâncias operacionais em andamento.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[CRG-CGV]</span><span class="role-level">Nível 15</span></div><h4 class="role-name">@Corregedor</h4><p class="role-desc">Investigador de denúncias, coleta de provas e auditoria do cumprimento do código disciplinar.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[CRG-APR]</span><span class="role-level">Nível 16</span></div><h4 class="role-name">@Corregedor-Aprendiz</h4><p class="role-desc">Membro em estágio de aprendizado das rotinas, regulamentos e procedimentos disciplinares.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+          </div>
+        </div>
+
+        <!-- Setor: Oficiais Superiores -->
+        <div class="hierarchy-card-group" data-sector="oficiais-superiores">
+          <div class="group-header"><img src="image/emblemaOFICIAIS.png" alt="Emblema Oficiais Superiores" class="group-icon-svg" style="object-fit: contain;"><div><h3>OFICIAIS SUPERIORES</h3></div></div>
+          <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Gestão tática e estratégica de batalhões, coordenação de grandes operações e planejamento de missões e patrulhamentos ostensivos.</p></div>
+          <div class="group-cards-grid">
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[CEL]</span><span class="role-level">Nível 17</span></div><h4 class="role-name">@Coronel</h4><p class="role-desc">Oficial superior encarregado do comando de grandes comandos e diretrizes estratégicas.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[TEN-CEL]</span><span class="role-level">Nível 18</span></div><h4 class="role-name">@Tenente-Coronel</h4><p class="role-desc">Subcomandante de batalhão e responsável pelo gerenciamento logístico do efetivo.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[MAJ]</span><span class="role-level">Nível 19</span></div><h4 class="role-name">@Major</h4><p class="role-desc">Supervisor direto de operações e fiscal do cumprimento de ordens de serviço e planejamento.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[CAP]</span><span class="role-level">Nível 20</span></div><h4 class="role-name">@Capitão</h4><p class="role-desc">Comandante de companhia, responsável pela formação tática e fiscalização do efetivo de campo.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+          </div>
+        </div>
+
+        <!-- Setor: Oficiais Subalternos -->
+        <div class="hierarchy-card-group" data-sector="oficiais-subalternos">
+          <div class="group-header"><img src="image/emblemaSUBALTERNOS.png" alt="Emblema Oficiais Subalternos" class="group-icon-svg" style="object-fit: contain;"><div><h3>OFICIAIS SUBALTERNOS</h3></div></div>
+          <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Liderança direta de equipes de patrulhamento em campo, coordenação de ocorrências de grande porte e acompanhamento da instrução de praças.</p></div>
+          <div class="group-cards-grid">
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[1º TEN]</span><span class="role-level">Nível 21</span></div><h4 class="role-name">@Primeiro-Tenente</h4><p class="role-desc">Comandante de pelotão e supervisor sênior de patrulhamento e rondas ostensivas.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[2º TEN]</span><span class="role-level">Nível 22</span></div><h4 class="role-name">@Segundo-Tenente</h4><p class="role-desc">Oficial de campo encarregado do comando de rondas e auxílio direto no gerenciamento do pelotão.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[ASP]</span><span class="role-level">Nível 23</span></div><h4 class="role-name">@Aspirante a Oficial</h4><p class="role-desc">Estágio de oficialato com acompanhamento de comandos de patrulha e instrução de comando.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+          </div>
+        </div>
+
+        <!-- Setor: Graduados -->
+        <div class="hierarchy-card-group" data-sector="graduados">
+          <div class="group-header"><img src="image/emblemaGRADUADO.png" alt="Emblema Graduados" class="group-icon-svg" style="object-fit: contain;"><div><h3>GRADUADOS</h3></div></div>
+          <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Espinha dorsal da tropa, encarregados do comando de viaturas, orientação tática de soldados e fiscalização do policiamento nas ruas.</p></div>
+          <div class="group-cards-grid">
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[SUB-TEN]</span><span class="role-level">Nível 24</span></div><h4 class="role-name">@Subtenente</h4><p class="role-desc">Graduado de maior senioridade, responsável pelo controle logístico, reserva de armamento e disciplina do efetivo.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[1º SGT]</span><span class="role-level">Nível 25</span></div><h4 class="role-name">@Primeiro-Sargento</h4><p class="role-desc">Sargento encarregado de viatura de fiscalização e auxílio na coordenação de patrulhas.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[2º SGT]</span><span class="role-level">Nível 26</span></div><h4 class="role-name">@Segundo-Sargento</h4><p class="role-desc">Comandante de viatura e orientador tático de apoio às guarnições ordinárias.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[3º SGT]</span><span class="role-level">Nível 27</span></div><h4 class="role-name">@Terceiro-Sargento</h4><p class="role-desc">Liderança imediata de patrulhamento e encarregado do comando de equipe nas ruas.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[CB]</span><span class="role-level">Nível 28</span></div><h4 class="role-name">@Cabo</h4><p class="role-desc">Patrulheiro sênior, motorista tático e auxílio direto aos sargentos na coordenação da viatura.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+          </div>
+        </div>
+
+        <!-- Setor: Praças -->
+        <div class="hierarchy-card-group" data-sector="pracas">
+          <div class="group-header"><img src="image/emblemaPRACA.png" alt="Emblema Praças" class="group-icon-svg" style="object-fit: contain;"><div><h3>PRAÇAS</h3></div></div>
+          <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Executores do policiamento ostensivo e preventivo nas ruas, aprendizes da doutrina policial militar e primeiros a responder aos chamados.</p></div>
+          <div class="group-cards-grid">
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[SD-1CL]</span><span class="role-level">Nível 29</span></div><h4 class="role-name">@Soldado de 1ª Classe</h4><p class="role-desc">Policial ostensivo experiente e apto para atuar em todas as modalidades de patrulhamento.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[SD-2CL]</span><span class="role-level">Nível 30</span></div><h4 class="role-name">@Soldado de 2ª Classe</h4><p class="role-desc">Policial promovido recente em fase de consolidação prática da rotina de patrulhamento.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[AL-SD]</span><span class="role-level">Nível 31</span></div><h4 class="role-name">@Aluno-Soldado</h4><p class="role-desc">Aluno em formação prática na Escola de Formação de Soldados (CFSd).</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[REC]</span><span class="role-level">Nível 32</span></div><h4 class="role-name">@Recruta</h4><p class="role-desc">Recém-ingressado em processo seletivo e acompanhamento de instrução teórica básica.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+          </div>
+        </div>
+
+        <!-- Setor: Membros -->
+        <div class="hierarchy-card-group" data-sector="membros">
+          <div class="group-header"><svg class="group-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><div><h3>MEMBROS</h3></div></div>
+          <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Integrantes da comunidade SP Roleplay, cidadãos civis, participantes de patrulhas, eventos e atividades comunitárias.</p></div>
+          <div class="group-cards-grid">
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[CIVIL]</span><span class="role-level">Nível 33</span></div><h4 class="role-name">@Membro / Civil</h4><p class="role-desc">Membro registrado e ativo na comunidade SP Roleplay, apto a interagir e participar dos eventos comunitários.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-gradient-divider"></div>
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region Aba: Batalhões -->
+    <section id="batalhoes" class="tab-content">
+      <div class="container page-padding">
+        <div class="hierarchy-page-header">
+          <h2 class="title-page">HIERARQUIA DOS BATALHÕES</h2>
+          <p class="subtitle-page">Quadro oficial de batalhões, comandos e cargos especializados (ROTA, COE e PM).</p>
+        </div>
+
+        <!-- Batalhão: ROTA -->
+        <div class="hierarchy-card-group">
+          <div class="group-header"><img src="image/emblemaROTA.png" alt="Emblema ROTA" class="group-icon-svg" style="object-fit: contain;"><div><h3>BATALHÃO ROTA</h3></div></div>
+          <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Unidade tática de elite focada no patrulhamento ostensivo de alto risco, combate ao crime organizado e apoio emergencial.</p></div>
+          <div class="group-cards-grid">
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[ROTA]</span><span class="role-level">Comando</span></div><h4 class="role-name">@[ROTA] Comandante</h4><p class="role-desc">Comandante Geral da Rondas Ostensivas Tobias de Aguiar.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[ROTA]</span><span class="role-level">Subcomando</span></div><h4 class="role-name">@[ROTA] Subcomandante</h4><p class="role-desc">Subcomandante de Batalhão da ROTA.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[ROTA]</span><span class="role-level">Supervisão</span></div><h4 class="role-name">@[ROTA] Capitão</h4><p class="role-desc">Oficial capitão da ROTA responsável por comandar operações de patrulhamento tático.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[ROTA]</span><span class="role-level">Liderança</span></div><h4 class="role-name">@[ROTA] Tenente</h4><p class="role-desc">Tenente da ROTA encarregado pelo comando direto da barca de patrulhamento ostensivo tático.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[ROTA]</span><span class="role-level">Operacional</span></div><h4 class="role-name">@[ROTA] Operador</h4><p class="role-desc">Patrulheiro tático treinado em doutrina de ROTA para atuação em apoio de fogo e cerco.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+          </div>
+        </div>
+
+        <!-- Batalhão: COE -->
+        <div class="hierarchy-card-group">
+          <div class="group-header"><img src="image/emblemaCOE.png" alt="Emblema COE" class="group-icon-svg" style="object-fit: contain;"><div><h3>BATALHÃO COE</h3></div></div>
+          <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Unidade especial capacitada para resgate de reféns, incursões em mata fechada, desarmamento de explosivos e gerenciamento de crises.</p></div>
+          <div class="group-cards-grid">
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[COE]</span><span class="role-level">Comando</span></div><h4 class="role-name">@[COE] Comandante</h4><p class="role-desc">Comandante do Comandos e Operações Especiais.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[COE]</span><span class="role-level">Subcomando</span></div><h4 class="role-name">@[COE] Subcomandante</h4><p class="role-desc">Subcomandante do Grupo de Operações Especiais.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[COE]</span><span class="role-level">Supervisão</span></div><h4 class="role-name">@[COE] Chefe de Operações</h4><p class="role-desc">Responsável pelo planejamento tático e coordenação de resgates/invasões de alto risco.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[COE]</span><span class="role-level">Liderança</span></div><h4 class="role-name">@[COE] Líder Tático</h4><p class="role-desc">Líder de equipe em incursões táticas em áreas de alto risco e mata fechada.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[COE]</span><span class="role-level">Operacional</span></div><h4 class="role-name">@[COE] Operador Especial</h4><p class="role-desc">Operador de Comandos e Operações Especiais highly capacitado para intervenções táticas.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+          </div>
+        </div>
+
+        <!-- Batalhão: PM -->
+        <div class="hierarchy-card-group">
+          <div class="group-header"><img src="image/emblemaPM.png" alt="Emblema PM" class="group-icon-svg" style="object-fit: contain;"><div><h3>BATALHÃO PM</h3></div></div>
+          <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Efetivo principal da corporação, responsável pelas patrulhas de rotina, preservação da ordem e atendimento às ocorrências urbanas.</p></div>
+          <div class="group-cards-grid">
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[PM]</span><span class="role-level">Comando</span></div><h4 class="role-name">@[PM] Comandante</h4><p class="role-desc">Comandante da Polícia Militar Ordinária.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[PM]</span><span class="role-level">Subcomando</span></div><h4 class="role-name">@[PM] Subcomandante</h4><p class="role-desc">Subcomandante da Polícia Militar Ordinária.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[PM]</span><span class="role-level">Supervisão</span></div><h4 class="role-name">@[PM] Comandante de Patrulha</h4><p class="role-desc">Supervisor geral das patrulhas ordinárias da Polícia Militar no setor urbanizado.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[PM]</span><span class="role-level">Liderança</span></div><h4 class="role-name">@[PM] Chefe de Guarnição</h4><p class="role-desc">Chefe encarregado da viatura da Polícia Militar na área de cobertura urbana.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+            <div class="role-card"><div class="role-card-top"><span class="role-tag">[PM]</span><span class="role-level">Operacional</span></div><h4 class="role-name">@[PM] Policial Operacional</h4><p class="role-desc">Praça atuante nas rotinas de patrulhamento ostensivo e atendimento dos chamados de emergência.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-gradient-divider"></div>
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region Aba: Regras do Servidor -->
+    <section id="regras" class="tab-content">
+      <div class="container page-padding">
+        <div class="hierarchy-page-header">
+          <h2 class="title-page">DIRETRIZES & REGRAS DO SERVIDOR</h2>
+          <p class="subtitle-page">Normas oficiais de convivência, conduta e atuação dentro da comunidade SP Roleplay.</p>
+        </div>
+
+        <div class="rules-section-wrapper">
+          <div class="rules-section-title">
+            <svg class="section-title-icon" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <h3>REGRAS GERAIS DA COMUNIDADE</h3>
+          </div>
+          <div class="rules-dark-box">
+            <div class="rule-item-card"><div class="rule-card-header"><h4 class="rule-title-white">01 | RESPEITO</h4><span class="rule-pill">CONVIVÊNCIA</span></div><p class="rule-text">Mantenha uma postura respeitosa com todos os membros, independentemente de cargo ou função. Não serão tolerados preconceito, discriminação, ameaças, perseguição, humilhações, provocações excessivas ou comportamentos que tenham como objetivo causar conflitos.</p></div>
+            <div class="rule-item-card"><div class="rule-card-header"><h4 class="rule-title-white">02 | SPAM / FLOOD / MENÇÕES</h4><span class="rule-pill">ORGANIZAÇÃO</span></div><p class="rule-text">Não envie mensagens, GIFs, figurinhas, emojis ou links de forma excessiva. Evite também utilizar @everyone, @here ou realizar diversas menções sem necessidade.</p></div>
+            <div class="rule-item-card"><div class="rule-card-header"><h4 class="rule-title-white">03 | DIVULGAÇÃO / COMÉRCIO</h4><span class="rule-pill">COMUNIDADE</span></div><p class="rule-text">Não é permitida a divulgação de outros servidores, comunidades, projetos ou serviços sem autorização. Também não são permitidas vendas, trocas ou negociações de contas, itens ou produtos dentro do servidor.</p></div>
+            <div class="rule-item-card"><div class="rule-card-header"><h4 class="rule-title-white">04 | CONTEÚDO INADEQUADO</h4><span class="rule-pill">SEGURANÇA</span></div><p class="rule-text">Não envie conteúdos sexuais, perturbadores, maliciosos ou inadequados para a comunidade. Isso se aplica a mensagens, imagens, vídeos, GIFs, figurinhas, áudios e links.</p></div>
+            <div class="rule-item-card"><div class="rule-card-header"><h4 class="rule-title-white">05 | INFORMAÇÕES PESSOAIS</h4><span class="rule-pill">PRIVACIDADE</span></div><p class="rule-text">Não compartilhe, solicite ou divulgue informações pessoais suas ou de outros membros, como endereço, telefone, documentos, senhas, localização ou outros dados privados.</p></div>
+          </div>
+        </div>
+
+        <div class="moderation-box-wrapper">
+          <div class="rules-section-title mod-title">
+            <svg class="section-title-icon" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            <h3>OBSERVAÇÕES DA MODERAÇÃO</h3>
+          </div>
+          <div class="rules-dark-box">
+            <div class="rule-item-card"><h4 class="mod-title-item">01 | AUTORIDADE DA MODERAÇÃO</h4><p class="mod-text">A equipe de moderação possui autoridade para tomar as medidas que considerar necessárias diante de situações que possam prejudicar o servidor, mesmo que determinada situação não esteja descrita de forma explícita nas regras.</p></div>
+            <div class="rule-item-card"><h4 class="mod-title-item">02 | BOM SENSO</h4><p class="mod-text">Nem todas as situações podem ser previstas em uma lista de regras. Esperamos que os membros utilizem o bom senso em chats, calls e demais espaços do servidor.</p></div>
+            <div class="rule-item-card"><h4 class="mod-title-item">03 | DISCORDÂNCIAS COM A STAFF</h4><p class="mod-text">Caso haja algum desentendimento relacionado a uma punição ou decisão da equipe, procure resolver a situação de maneira respeitosa, evitando discussões públicas.</p></div>
+            <div class="rule-item-card"><h4 class="mod-title-item">04 | ALTERAÇÕES NAS REGRAS</h4><p class="mod-text">As regras poderão ser alteradas ou atualizadas sempre que a administração considerar necessário. Alterações relevantes serão comunicadas aos membros.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-gradient-divider"></div>
+    </section>
+    <!-- #endregion -->
+
+    <!-- #region Abas Secundárias (Em breve) -->
+    <section id="editais" class="tab-content"><div class="container page-padding"><h2 class="title-page">Editais e Processos Seletivos</h2><p class="subtitle-page">Acompanhe as turmas de recrutamento abertas para a corporação.</p></div><div class="footer-gradient-divider"></div></section>
+    <section id="inscricoes" class="tab-content"><div class="container page-padding"><h2 class="title-page">Ficha de Inscrição</h2><p class="subtitle-page">Preencha seus dados para participar do processo seletivo.</p></div><div class="footer-gradient-divider"></div></section>
+    <section id="noticias" class="tab-content"><div class="container page-padding"><h2 class="title-page">Boletins e Informativos</h2><p class="subtitle-page">Últimas notícias emitidas pelo Comando Geral.</p></div><div class="footer-gradient-divider"></div></section>
+    <section id="servidor" class="tab-content"><div class="container page-padding"><h2 class="title-page">Guia do Servidor no Roblox</h2><p class="subtitle-page">Informações de comandos, viaturas e rádio.</p></div><div class="footer-gradient-divider"></div></section>
+    <section id="admin" class="tab-content"><div class="container page-padding"><h2 class="title-page">Painel Administrativo</h2><p class="subtitle-page">Acesso restrito para oficiais e moderadores.</p></div><div class="footer-gradient-divider"></div></section>
+    <!-- #endregion -->
+
+  </main>
+  <!-- #endregion -->
+
+  <!-- #region Rodapé -->
+  <footer class="footer-dark">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-col main-col">
+          <div class="brand-footer"><img src="image/brasaoPM.png" alt="Brasão PM" width="30" height="36" style="object-fit: contain;"><div><h3>RP SÃO PAULO</h3><p class="text-gold">Roleplay Comunitário Roblox</p></div></div>
+          <p class="footer-desc">Doutrina, hierarquia e simulação policial militar de alto nível no Roblox, promovendo a disciplina e o bom convívio comunitário.</p>
+        </div>
+        <div class="footer-col">
+          <h4>SERVIÇOS PÚBLICOS RP</h4>
+          <ul>
+            <li><a href="#" onclick="switchTab(event, 'home')">Página Inicial do Portal</a></li>
+            <li><a href="#" onclick="switchTab(event, 'hierarquia')">Quadro de Oficiais e Praças</a></li>
+            <li><a href="#" onclick="switchTab(event, 'batalhoes')">Hierarquia dos Batalhões</a></li>
+            <li><a href="#" onclick="switchTab(event, 'editais')">Editais de Concurso Aberto</a></li>
+            <li><a href="#" onclick="switchTab(event, 'inscricoes')">Inscrições e Ficha de Alistamento</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>DOUTRINA E NORMAS</h4>
+          <ul>
+            <li><a href="#" onclick="switchTab(event, 'regras')">Regulamento Geral Interno (RGI-RP)</a></li>
+            <li><a href="#">Código de Conduta e Disciplina</a></li>
+            <li><a href="#">Regras Antimarginalização (No-RDM)</a></li>
+            <li><a href="#" onclick="switchTab(event, 'noticias')">Boletins e Portarias Oficiais</a></li>
+            <li><a href="#" onclick="switchTab(event, 'servidor')">Guia de Patrulhamento no Jogo</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Comunidade RP São Paulo. Todos os direitos reservados.</span>
+        <span>Desenvolvido por <a href="https://github.com/GuilhermeKaw" target="_blank" rel="noopener noreferrer" class="github-link">GuilhermeKaw</a> & <a href="https://github.com/subaru-hub" target="_blank" rel="noopener noreferrer" class="github-link">subaru-hub</a> • v0.0.1-RP</span>
+      </div>
+    </div>
+  </footer>
+  <!-- #endregion -->
+
+  <script src="script.js"></script>
+</body>
+</html>
