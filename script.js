@@ -1,27 +1,15 @@
-// Troca de Abas & Controle do Menu Mobile
+//#region Alternância de Abas e Controle do Menu Mobile
 function switchTab(event, tabId) {
   if (event) event.preventDefault();
 
-  // Fecha a barra lateral se estiver aberta no celular
   closeMobileMenu();
 
-  // 1. Oculta todas as abas
-  document.querySelectorAll('.tab-content').forEach(tab => {
-    tab.classList.remove('active');
-  });
+  document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
 
-  // 2. Remove estado ativo dos botões
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-
-  // 3. Ativa a aba selecionada
   const activeTab = document.getElementById(tabId);
-  if (activeTab) {
-    activeTab.classList.add('active');
-  }
+  if (activeTab) activeTab.classList.add('active');
 
-  // 4. Ativa o botão correspondente
   if (event && event.currentTarget && event.currentTarget.classList.contains('tab-btn')) {
     event.currentTarget.classList.add('active');
   } else {
@@ -29,18 +17,13 @@ function switchTab(event, tabId) {
     if (btn) btn.classList.add('active');
   }
 
-  // Reseta a pesquisa e oculta a mensagem de erro ao trocar de aba
   const searchInput = document.getElementById('hierarchySearchInput');
   if (searchInput) searchInput.value = '';
 
   const noResultsMsg = document.getElementById('noResultsMessage');
   if (noResultsMsg) noResultsMsg.style.display = 'none';
 
-  // Restaura a visibilidade dos elementos da hierarquia
-  document.querySelectorAll('#hierarquia .role-card, #hierarquia .hierarchy-card-group').forEach(el => {
-    el.style.display = '';
-  });
-
+  document.querySelectorAll('#hierarquia .role-card, #hierarquia .hierarchy-card-group').forEach(el => el.style.display = '');
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -50,7 +33,7 @@ function toggleMobileMenu() {
   if (navBar && overlay) {
     const isOpen = navBar.classList.toggle('open');
     overlay.classList.toggle('active');
-    // Congela a página ao fundo enquanto o menu estiver aberto
+    // Bloqueia a rolagem no fundo enquanto o menu estiver aberto
     document.body.classList.toggle('menu-open', isOpen);
   }
 }
@@ -61,12 +44,12 @@ function closeMobileMenu() {
   if (navBar && overlay) {
     navBar.classList.remove('open');
     overlay.classList.remove('active');
-    // Restaura o rolamento normal da página
     document.body.classList.remove('menu-open');
   }
 }
+//#endregion
 
-// Filtro e Pesquisa de Hierarquia
+//#region Pesquisa e Filtros da Hierarquia
 let activeSector = 'all';
 
 function filterHierarchy() {
@@ -112,7 +95,6 @@ function filterSectorSelect(val) {
   filterHierarchy();
 }
 
-// Eventos de Inicialização
 document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.querySelector('.close-announcement');
   if (closeBtn) {
@@ -122,3 +104,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+//#endregion

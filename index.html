@@ -11,20 +11,16 @@
 </head>
 <body>
 
-  <!-- Banner de Alerta Superior -->
+  <!-- #region Header & Mobile Navigation -->
   <div class="top-announcement">
     <div class="announcement-content"><span>BEM-VINDO AO SP_ROLEPLAY: Confira as Regras Oficiais e nossa Hierarquia!</span></div>
     <button class="close-announcement" aria-label="Fechar Aviso">&times;</button>
   </div>
 
-  <!-- Overlay para fechar menu no mobile -->
   <div class="mobile-overlay" id="mobileOverlay" onclick="toggleMobileMenu()"></div>
 
-  <!-- Header Principal e Navegação -->
   <header class="main-header">
     <div class="container nav-flex">
-      
-      <!-- Botão Hambúrguer (Apenas Mobile) -->
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Abrir Menu">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
       </button>
@@ -36,15 +32,13 @@
 
       <div class="header-actions">
         <a href="https://www.roblox.com" target="_blank" rel="noopener noreferrer" class="btn-auth-solid desktop-auth-btn">
-          <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>
+          <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>
           Entrar com a Conta Roblox
         </a>
       </div>
     </div>
 
-    <!-- Barra / Sidebar de Navegação -->
     <nav class="nav-tabs-bar" id="navTabsBar">
-      <!-- Cabeçalho da Sidebar (Apenas Mobile) -->
       <div class="sidebar-header-mobile">
         <span class="sidebar-title">NAVEGAÇÃO</span>
         <button class="close-sidebar-btn" onclick="toggleMobileMenu()">&times;</button>
@@ -54,29 +48,27 @@
         <ul class="nav-tabs">
           <li><button class="tab-btn active" onclick="switchTab(event, 'home')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Início</button></li>
           <li><button class="tab-btn" onclick="switchTab(event, 'hierarquia')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>Hierarquia</button></li>
-          <li><button class="tab-btn" onclick="switchTab(event, 'batalhoes')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Batalhões</button></li>
-          <li><button class="tab-btn" onclick="switchTab(event, 'regras')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l3-8 3 8a3 3 0 0 1-6 0zM2 16l3-8 3 8a3 3 0 0 1-6 0zM7 21h10M12 3v18M3 7h18"></path></svg>Regras do Servidor</button></li>
+          <li><button class="tab-btn" onclick="switchTab(event, 'batalhoes')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>Batalhões</button></li>
+          <li><button class="tab-btn" onclick="switchTab(event, 'regras')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16l3-8 3 8a3 3 0 0 1-6 0zM2 16l3-8 3 8a3 3 0 0 1-6 0zM7 21h10M12 3v18M3 7h18"></path></svg>Regras do Servidor</button></li>
           <li><button class="tab-btn" onclick="switchTab(event, 'editais')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>Editais (Em breve)</button></li>
           <li><button class="tab-btn" onclick="switchTab(event, 'inscricoes')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>Inscrições (Em breve)</button></li>
           <li><button class="tab-btn" onclick="switchTab(event, 'noticias')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>Notícias</button></li>
-          <li><button class="tab-btn" onclick="switchTab(event, 'servidor')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>Servidor (Em breve)</button></li>
+          <li><button class="tab-btn" onclick="switchTab(event, 'servidor')"><svg class="icon-tab" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>Servidor (Em breve)</button></li>
         </ul>
       </div>
 
-      <!-- Botão Roblox no Fundo da Sidebar (Apenas Mobile) -->
       <div class="sidebar-auth-wrapper">
         <a href="https://www.roblox.com" target="_blank" rel="noopener noreferrer" class="btn-auth-solid mobile-auth-btn">
-          <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>
+          <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>
           Entrar com a Conta Roblox
         </a>
       </div>
     </nav>
   </header>
+  <!-- #endregion -->
 
-  <!-- Conteúdo Principal -->
   <main>
-
-    <!-- Aba: Início -->
+    <!-- #region Aba Home -->
     <section id="home" class="tab-content active">
       <div class="hero-section">
         <div class="container hero-flex">
@@ -90,7 +82,7 @@
             </div>
             <div class="hero-buttons">
               <a href="https://www.roblox.com/pt/games/112115919419268/RP-S-o-Paulo" target="_blank" rel="noopener noreferrer" class="btn-hero-neutral">
-                <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>Entrar no Jogo Roblox<svg class="icon-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="12" x2="10" y2="12"></line><line x1="8" y1="10" x2="8" y2="14"></line><circle cx="15" cy="13" r="1"></circle><circle cx="18" cy="11" r="1"></circle><rect x="2" y="6" width="20" height="12" rx="3"></rect></svg>Entrar no Jogo Roblox<svg class="icon-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
               </a>
               <a href="https://discord.gg/zs4uah6AjB" target="_blank" rel="noopener noreferrer" class="btn-hero-neutral">
                 <svg class="icon-btn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Servidor Discord<svg class="icon-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
@@ -108,19 +100,19 @@
           </div>
           <div class="cards-grid">
             <div class="service-card" onclick="switchTab(event, 'hierarquia')">
-              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
               <h3>HIERARQUIA & EFETIVO</h3><p>Conheça a cadeia de comando, oficiais superiores, praças e unidades especializadas.</p><div class="card-divider"></div><span class="card-link">Ver Estrutura <span class="arrow">&rsaquo;</span></span>
             </div>
             <div class="service-card" onclick="switchTab(event, 'batalhoes')">
-              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></div>
               <h3>BATALHÕES DE ELITE</h3><p>Estrutura interna, especializações e quadro de cargos da ROTA, COE e Policiamento.</p><div class="card-divider"></div><span class="card-link">Consultar Batalhões <span class="arrow">&rsaquo;</span></span>
             </div>
             <div class="service-card" onclick="switchTab(event, 'editais')">
-              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
               <h3>EDITAIS & CONCURSOS</h3><p>Processos seletivos para ingresso no CFSd, cursos táticos do BAEP e formação de pilotos.</p><div class="card-divider"></div><span class="card-link">Consultar Editais <span class="arrow">&rsaquo;</span></span>
             </div>
             <div class="service-card" onclick="switchTab(event, 'regras')">
-              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 16l3-8 3 8a3 3 0 0 1-6 0zM2 16l3-8 3 8a3 3 0 0 1-6 0zM7 21h10M12 3v18M3 7h18"></path></svg></div>
+              <div class="card-icon"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 16l3-8 3 8a3 3 0 0 1-6 0zM2 16l3-8 3 8a3 3 0 0 1-6 0zM7 21h10M12 3v18M3 7h18"></path></svg></div>
               <h3>REGRAS DO SERVIDOR</h3><p>Regulamento geral interno, código de conduta, diretrizes de convivência e punições disciplinares.</p><div class="card-divider"></div><span class="card-link">Ler Regras <span class="arrow">&rsaquo;</span></span>
             </div>
           </div>
@@ -132,8 +124,9 @@
       </div>
       <div class="footer-gradient-divider"></div>
     </section>
+    <!-- #endregion -->
 
-    <!-- Aba: Hierarquia -->
+    <!-- #region Aba Hierarquia -->
     <section id="hierarquia" class="tab-content">
       <div class="container page-padding">
         <div class="hierarchy-page-header">
@@ -163,14 +156,13 @@
         </div>
 
         <div id="noResultsMessage" class="no-results-message">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
           <h4>NENHUM CARGO OU INTEGRANTE ENCONTRADO</h4>
           <p>Tente pesquisar por outros termos, tags de nível ou selecione outro setor no filtro.</p>
         </div>
 
-        <!-- Setores da Hierarquia -->
         <div class="hierarchy-card-group" data-sector="administracao">
-          <div class="group-header"><img src="image/emblemaADM.png" alt="Emblema Administração" class="group-icon-svg" style="object-fit: contain;"><div><h3>ADMINISTRAÇÃO</h3></div></div>
+          <div class="group-header"><img src="image/emblemaADM.png" alt="Emblema ADM" class="group-icon-svg" style="object-fit: contain;"><div><h3>ADMINISTRAÇÃO</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Direção técnica, infraestrutura, desenvolvimento e moderação geral da comunidade e dos sistemas do servidor.</p></div>
           <div class="group-cards-grid">
             <div class="role-card"><div class="role-card-top"><span class="role-tag">[ADM]</span><span class="role-level">Nível 1</span></div><h4 class="role-name">@Administrador</h4><p class="role-desc">Responsável pela gestão máxima da comunidade, decisões administrativas e supervisão geral.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
@@ -182,7 +174,7 @@
         </div>
 
         <div class="hierarchy-card-group" data-sector="governo-federal">
-          <div class="group-header"><img src="image/emblemaGOVERNO.png" alt="Emblema Governo Federal" class="group-icon-svg" style="object-fit: contain;"><div><h3>GOVERNO FEDERAL</h3></div></div>
+          <div class="group-header"><img src="image/emblemaGOVERNO.png" alt="Emblema Governo" class="group-icon-svg" style="object-fit: contain;"><div><h3>GOVERNO FEDERAL</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Cúpula executiva do governo, planejamento político, regulamentação pública e representação máxima do estado.</p></div>
           <div class="group-cards-grid">
             <div class="role-card"><div class="role-card-top"><span class="role-tag">[PRES]</span><span class="role-level">Nível 6</span></div><h4 class="role-name">@Presidente</h4><p class="role-desc">Chefe do Poder Executivo, representante supremo da nação e comandante-em-chefe institucional.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
@@ -193,7 +185,7 @@
         </div>
 
         <div class="hierarchy-card-group" data-sector="corregedoria">
-          <div class="group-header"><img src="image/emblemaCORREGEDORIA.png" alt="Emblema Corregedoria" class="group-icon-svg" style="object-fit: contain;"><div><h3>CORREGEDORIA + CHEFIA DA POLÍCIA</h3></div></div>
+          <div class="group-header"><img src="image/emblemaCORREGEDORIA.png" alt="Emblema CRG" class="group-icon-svg" style="object-fit: contain;"><div><h3>CORREGEDORIA + CHEFIA DA POLÍCIA</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Gestão de Segurança Pública, direção máxima dos órgãos policiais, auditoria e fiscalização disciplinar do efetivo.</p></div>
           <div class="group-cards-grid">
             <div class="role-card"><div class="role-card-top"><span class="role-tag">[SSP]</span><span class="role-level">Nível 10</span></div><h4 class="role-name">@Secretário de Segurança Pública</h4><p class="role-desc">Autoridade máxima encarregada de coordenar a política e a gestão da segurança pública.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
@@ -207,7 +199,7 @@
         </div>
 
         <div class="hierarchy-card-group" data-sector="oficiais-superiores">
-          <div class="group-header"><img src="image/emblemaOFICIAIS.png" alt="Emblema Oficiais Superiores" class="group-icon-svg" style="object-fit: contain;"><div><h3>OFICIAIS SUPERIORES</h3></div></div>
+          <div class="group-header"><img src="image/emblemaOFICIAIS.png" alt="Emblema Oficiais" class="group-icon-svg" style="object-fit: contain;"><div><h3>OFICIAIS SUPERIORES</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Gestão tática e estratégica de batalhões, coordenação de grandes operações e planejamento de missões e patrulhamentos ostensivos.</p></div>
           <div class="group-cards-grid">
             <div class="role-card"><div class="role-card-top"><span class="role-tag">[CEL]</span><span class="role-level">Nível 17</span></div><h4 class="role-name">@Coronel</h4><p class="role-desc">Oficial superior encarregado do comando de grandes comandos e diretrizes estratégicas.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
@@ -218,7 +210,7 @@
         </div>
 
         <div class="hierarchy-card-group" data-sector="oficiais-subalternos">
-          <div class="group-header"><img src="image/emblemaSUBALTERNOS.png" alt="Emblema Oficiais Subalternos" class="group-icon-svg" style="object-fit: contain;"><div><h3>OFICIAIS SUBALTERNOS</h3></div></div>
+          <div class="group-header"><img src="image/emblemaSUBALTERNOS.png" alt="Emblema Subalternos" class="group-icon-svg" style="object-fit: contain;"><div><h3>OFICIAIS SUBALTERNOS</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Liderança direta de equipes de patrulhamento em campo, coordenação de ocorrências de grande porte e acompanhamento da instrução de praças.</p></div>
           <div class="group-cards-grid">
             <div class="role-card"><div class="role-card-top"><span class="role-tag">[1º TEN]</span><span class="role-level">Nível 21</span></div><h4 class="role-name">@Primeiro-Tenente</h4><p class="role-desc">Comandante de pelotão e supervisor sênior de patrulhamento e rondas ostensivas.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
@@ -251,7 +243,7 @@
         </div>
 
         <div class="hierarchy-card-group" data-sector="membros">
-          <div class="group-header"><svg class="group-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><div><h3>MEMBROS</h3></div></div>
+          <div class="group-header"><svg class="group-icon-svg" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><div><h3>MEMBROS</h3></div></div>
           <div class="group-description-bar"><span class="desc-label">ATRIBUIÇÃO & RESPONSABILIDADE OFICIAL</span><p>Integrantes da comunidade SP Roleplay, cidadãos civis, participantes de patrulhas, eventos e atividades comunitárias.</p></div>
           <div class="group-cards-grid">
             <div class="role-card"><div class="role-card-top"><span class="role-tag">[CIVIL]</span><span class="role-level">Nível 33</span></div><h4 class="role-name">@Membro / Civil</h4><p class="role-desc">Membro registrado e ativo na comunidade SP Roleplay, apto a interagir e participar dos eventos comunitários.</p><div class="role-divider"></div><span class="role-members-title">Integrantes (0):</span><p class="no-members">*Nenhum integrante atribuído no momento*</p></div>
@@ -260,8 +252,9 @@
       </div>
       <div class="footer-gradient-divider"></div>
     </section>
+    <!-- #endregion -->
 
-    <!-- Aba: Batalhões -->
+    <!-- #region Aba Batalhões -->
     <section id="batalhoes" class="tab-content">
       <div class="container page-padding">
         <div class="hierarchy-page-header">
@@ -307,8 +300,9 @@
       </div>
       <div class="footer-gradient-divider"></div>
     </section>
+    <!-- #endregion -->
 
-    <!-- Aba: Regras do Servidor -->
+    <!-- #region Aba Regras -->
     <section id="regras" class="tab-content">
       <div class="container page-padding">
         <div class="hierarchy-page-header">
@@ -345,17 +339,17 @@
       </div>
       <div class="footer-gradient-divider"></div>
     </section>
+    <!-- #endregion -->
 
-    <!-- Abas Secundárias (Em breve) -->
+    <!-- #region Abas Secundárias -->
     <section id="editais" class="tab-content"><div class="container page-padding"><h2 class="title-page">Editais e Processos Seletivos</h2><p class="subtitle-page">Acompanhe as turmas de recrutamento abertas para a corporação.</p></div><div class="footer-gradient-divider"></div></section>
     <section id="inscricoes" class="tab-content"><div class="container page-padding"><h2 class="title-page">Ficha de Inscrição</h2><p class="subtitle-page">Preencha seus dados para participar do processo seletivo.</p></div><div class="footer-gradient-divider"></div></section>
     <section id="noticias" class="tab-content"><div class="container page-padding"><h2 class="title-page">Boletins e Informativos</h2><p class="subtitle-page">Últimas notícias emitidas pelo Comando Geral.</p></div><div class="footer-gradient-divider"></div></section>
     <section id="servidor" class="tab-content"><div class="container page-padding"><h2 class="title-page">Guia do Servidor no Roblox</h2><p class="subtitle-page">Informações de comandos, viaturas e rádio.</p></div><div class="footer-gradient-divider"></div></section>
-    <section id="admin" class="tab-content"><div class="container page-padding"><h2 class="title-page">Painel Administrativo</h2><p class="subtitle-page">Acesso restrito para oficiais e moderadores.</p></div><div class="footer-gradient-divider"></div></section>
-
+    <!-- #endregion -->
   </main>
 
-  <!-- Rodapé -->
+  <!-- #region Rodapé -->
   <footer class="footer-dark">
     <div class="container">
       <div class="footer-columns">
@@ -390,6 +384,7 @@
       </div>
     </div>
   </footer>
+  <!-- #endregion -->
 
   <script src="script.js"></script>
 </body>
