@@ -48,8 +48,10 @@ function toggleMobileMenu() {
   const navBar = document.getElementById('navTabsBar');
   const overlay = document.getElementById('mobileOverlay');
   if (navBar && overlay) {
-    navBar.classList.toggle('open');
+    const isOpen = navBar.classList.toggle('open');
     overlay.classList.toggle('active');
+    // Congela a página ao fundo enquanto o menu estiver aberto
+    document.body.classList.toggle('menu-open', isOpen);
   }
 }
 
@@ -59,6 +61,8 @@ function closeMobileMenu() {
   if (navBar && overlay) {
     navBar.classList.remove('open');
     overlay.classList.remove('active');
+    // Restaura o rolamento normal da página
+    document.body.classList.remove('menu-open');
   }
 }
 

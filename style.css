@@ -12,6 +12,7 @@
 * { scrollbar-width: thin; scrollbar-color: #1e293b #060a12; margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-body); }
 html { height: 100%; }
 body { min-height: 100vh; display: flex; flex-direction: column; background-color: var(--bg-light-body); color: var(--text-dark); }
+body.menu-open { overflow: hidden !important; touch-action: none; }
 main { flex: 1 0 auto; display: flex; flex-direction: column; }
 a { text-decoration: none; color: inherit; }
 .container { max-width: 1280px; margin: 0 auto; padding: 0 40px; width: 100%; }
@@ -217,7 +218,7 @@ a { text-decoration: none; color: inherit; }
     pointer-events: auto;
   }
 
-  /* Sidebar Drawer na esquerda */
+  /* Sidebar Drawer na esquerda com rolamento isolado */
   .nav-tabs-bar {
     position: fixed;
     top: 0; left: -290px;
@@ -232,6 +233,8 @@ a { text-decoration: none; color: inherit; }
     flex-direction: column;
     justify-content: space-between;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
   }
   .nav-tabs-bar.open { left: 0; }
 
