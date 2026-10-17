@@ -191,7 +191,7 @@ a { text-decoration: none; color: inherit; }
     cursor: pointer;
   }
 
-  .container { padding: 0 16px; }
+  .container { padding: 0 20px; }
   .nav-flex { padding: 12px 0; gap: 12px; }
   .brand-name { font-size: 1.3rem; }
 
@@ -282,9 +282,31 @@ a { text-decoration: none; color: inherit; }
     font-size: 0.85rem;
   }
 
-  /* Ajustes de Espaçamento no Mobile */
-  .page-padding { padding: 32px 0 40px 0; }
-  .hierarchy-page-header { margin-top: 18px; margin-bottom: 24px; }
+  /* Centralização e Alinhamento dos Títulos no Celular */
+  .page-padding { padding: 28px 0 40px 0; }
+  
+  .hierarchy-page-header {
+    margin-top: 16px;
+    margin-bottom: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .title-page {
+    font-size: 1.55rem;
+    text-align: center;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
+  .subtitle-page {
+    font-size: 0.88rem;
+    text-align: center;
+    line-height: 1.45;
+  }
   
   .hero-section { padding: 32px 0 60px 0; min-height: auto; text-align: center; }
   .hero-flex { flex-direction: column; gap: 24px; }
@@ -309,7 +331,7 @@ a { text-decoration: none; color: inherit; }
 
 @media (max-width: 480px) {
   .hero-title { font-size: 1.8rem; }
-  .title-page { font-size: 1.45rem; }
+  .title-page { font-size: 1.4rem; }
   .group-header { padding: 14px 16px; }
   .group-header h3 { font-size: 1.05rem; }
   .group-cards-grid { padding: 14px; }
