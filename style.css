@@ -195,6 +195,11 @@ a { text-decoration: none; color: inherit; }
   .nav-flex { padding: 12px 0; gap: 12px; }
   .brand-name { font-size: 1.3rem; }
 
+  /* Quebra de linha exclusiva para mobile */
+  .mobile-break {
+    display: block;
+  }
+
   /* Overlay de fundo */
   .mobile-overlay {
     display: block;
